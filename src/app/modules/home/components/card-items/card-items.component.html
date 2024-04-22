@@ -1,0 +1,13 @@
+<div class="card-body">
+  <div *ngFor="let product of productsDatasInput | paginate: {itemsPerPage: itemsPrPage, currentPage: crrntPage}" class="card-content">
+    <div (click)="navigate(product.id)" class="link">
+  <img src="{{product.image_url}}" />
+  <a (click)="navigate(product.id)" class="name">{{product.name}}</a>
+  <div class="space"></div>
+  <a class="price">{{product.price_in_cents | cardItemsPipe}}</a>
+    </div>
+  </div>
+  <div class="paginator">
+    <pagination-controls (pageChange)="crrntPage = $event"></pagination-controls>
+  </div>
+</div>

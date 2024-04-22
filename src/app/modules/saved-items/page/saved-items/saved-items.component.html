@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="back-button" (click)="navigate()" >
+  <img src="../../../../../assets/Backward, Rearward, Back.png" alt="botão de voltar">
+  <a>Voltar</a>
+</div>
+<h1>Seu carrinho</h1>
+<p>Total ({{productDatas.length}} produtos) <span>{{subTotalValue| cardItemsPipe}}</span></p>
+<main>
+  <div class="products-side">
+  <div *ngFor="let product of productDatas" class="products" (click)="navigateToProduct(product.id)">
+    <img src="{{product.img_url}}" alt="imagem do produto">
+    <div class="infos">
+      <div class="title">
+        <h1>{{product.name}}</h1>
+        <img (click)="deleteProduct(product.id)" src="../../../../../assets/Trash, Delete, Bin.png" alt="delete button">
+      </div>
+      <p *ngIf="screenWidth <= 750" class="description">{{product.description | shorten: 100}}</p>
+      <p *ngIf="screenWidth > 750" class="description">{{product.description | shorten: 200}}</p>
+      <div class="amount">
+        <div class="input">
+          <p>{{product.amount}}</p>
+          <button (click)="editAmount(product.id)">+</button>
+        </div>
+        <p class="price">{{product.price_in_cents | cardItemsPipe}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="total-side">
+    <div class="infos">
+      <h2>Resumo do pedido</h2>
+      <p>Subtotal dos produtos <span *ngIf="productDatas.length !== 0">{{subTotalValue | cardItemsPipe}}</span></p>
+      <p>Entrega <span *ngIf="(subTotalValue / 100) >= 900 && productDatas.length !== 0">R$00,00</span> <span *ngIf="subTotalValue / 100 < 900" >R$ 40,00</span></p>
+      <div class="bar"></div>
+      <p>Total <span *ngIf="(subTotalValue / 100) < 900 && productDatas.length !== 0" >R$ {{((subTotalValue + 4000) | cardItemsPipe) }}</span> <span *ngIf="(subTotalValue / 100) >= 900 && productDatas.length !== 0">{{(subTotalValue | cardItemsPipe)}}</span> </p>
+      <div class="info-button">
+        <button disabled="true">Finalizar a compra</button>
+      </div>
+    </div>
+  </div>
+</main>

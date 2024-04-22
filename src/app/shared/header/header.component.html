@@ -1,0 +1,14 @@
+<header>
+  <div class="logo">
+    <h1 (click)="navigateToHome()">capputeeno</h1>
+  </div>
+  <nav>
+    <div class="search-container">
+  <input type="search" placeholder="Procurando por algo específico?" class="search-input" (input)="onSearchInput($event)" >
+  <button type="submit" class="search-button">
+    <img src="../../../../../assets/search-loupe.png" alt="">
+  </button>
+  </div>
+    <app-cart class="cart" (click)="navigate()"></app-cart>
+  </nav>
+</header>

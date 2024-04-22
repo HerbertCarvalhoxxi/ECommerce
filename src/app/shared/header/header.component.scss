@@ -1,0 +1,112 @@
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  width: 100vw;
+  background-color: #ffffff;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.logo h1 {
+  font-family: "Saira Stencil One", sans-serif;
+  font-style: normal;
+  color: #5D5D6D;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 150%;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.search-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+
+}
+
+.search-input {
+  padding: 10px 30px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 352px;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  background-color: #F3F5F6;
+  font-family: 'Saira';
+}
+
+.search-button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .logo h1 {
+    font-size: 24px;
+    margin-right: 5px;
+    order: 0;
+  }
+
+  .cart {
+    order: 1;
+  }
+
+  .search-container {
+    margin-right: 0;
+    margin: 0;
+  }
+
+  .search-input {
+    order: 2;
+    width: 180px;
+
+  }
+}
+
+
+@media screen and (max-width: 572) {
+  .logo h1 {
+    font-size: 16px;
+    order: 0;
+  }
+  .cart {
+    order: 1;
+  }
+
+  .search-container {
+    margin-right: 0;
+    margin: 0;
+  }
+
+  .search-input{
+    order: 2;
+    width: 180px;
+
+  }
+}
+
+@media screen and (max-width: 250px) {
+
+  .search-input {
+    width: 150px;
+  }
+
+}

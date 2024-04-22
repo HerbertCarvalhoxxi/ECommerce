@@ -1,0 +1,17 @@
+<div class="filters">
+  <div class="filterByType">
+    <a (click)="setFilter('allProducts')" (click)="homeComp.getAllProducts()" [class.selected]="filter === 'allProducts'">Todos os produtos</a>
+    <a (click)="setFilter('shirts')" (click)="homeComp.getAllTshirts()" [class.selected]="filter === 'shirts'">Camisetas</a>
+    <a (click)="setFilter('mugs')" (click)="homeComp.getAllMugs()" [class.selected]="filter === 'mugs'">Canecas</a>
+  </div>
+  <div class="filterByPriority">
+    <button (click)="setShowFilter()">Organizar por <img src="../../../../../assets/Arrow.png" alt=""></button>
+      <div class="showPriorityValues" *ngIf="showFilters === true">
+        <p (click)="handleProductEvent(enum.NEWS_ENUM)">Novidades</p>
+        <p (click)="handleProductEvent(enum.HIGHTEST_VALUE)">Preço: Maior - menor</p>
+        <p (click)="handleProductEvent(enum.LOWEST_VALUE)">Preço: Menor - maior</p>
+        <p (click)="handleProductEvent(enum.BESTSELLERS)">Mais vendidos</p>
+      </div>
+  </div>
+
+</div>

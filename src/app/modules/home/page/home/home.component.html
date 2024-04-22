@@ -1,0 +1,6 @@
+<app-header (searchChange)="onSearchChange($event)"></app-header>
+<app-filters (productAction)="filter($event)"></app-filters>
+  <app-card-items [productsDatasInput]="filtedList" [totalItems]="length"></app-card-items>
+
+
+
